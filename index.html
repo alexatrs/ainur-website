@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ainur Bisembaeva – Psychologist & Gestalt Therapist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ---------- RESET ---------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      color: #111827;
+      background:
+        radial-gradient(circle at top left, #fce7f3 0, transparent 55%),
+        radial-gradient(circle at bottom right, #dbeafe 0, transparent 55%),
+        #0f172a;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      line-height: 1.6;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 24px;
+      box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.25),
+        0 0 0 1px rgba(148, 163, 184, 0.2);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 16px;
+      }
+      .page {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    main {
+      padding: 28px 28px 28px 32px;
+    }
+
+    aside {
+      padding: 28px 24px 28px 24px;
+      border-left: 1px solid rgba(226, 232, 240, 0.9);
+      background: linear-gradient(145deg, #eff6ff, #fdf2ff);
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 24px 20px 8px 20px;
+      }
+      aside {
+        padding: 20px;
+        border-left: none;
+        border-top: 1px solid rgba(226, 232, 240, 0.9);
+      }
+    }
+
+    /* ---------- HEADER ---------- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      background: rgba(239, 246, 255, 0.9);
+      color: #1d4ed8;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6b7280;
+      max-width: 360px;
+    }
+
+    /* ---------- LANGUAGE TOGGLE ---------- */
+    .lang-toggle {
+      display: inline-flex;
+      padding: 4px;
+      border-radius: 999px;
+      background: #0f172a;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .lang-btn.active {
+      background: #f9fafb;
+      color: #0f172a;
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: #e5e7eb;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #6b7280;
+      background: #f9fafb;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .card {
+      border-radius: 18px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: #ffffff;
+      padding: 14px 16px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .list li::before {
+      content: "•";
+      color: #6366f1;
+      display: inline-block;
+      width: 1em;
+      margin-left: -0.5em;
+    }
+
+    /* ---------- CTA BUTTONS ---------- */
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-primary, .btn-outline {
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #ec4899);
+      color: #f9fafb;
+      box-shadow:
+        0 12px 30px rgba(79, 70, 229, 0.38),
+        0 0 0 1px rgba(248, 250, 252, 0.2);
+    }
+
+    .btn-primary span.icon {
+      font-size: 16px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #4b5563;
+    }
+
+    .btn-outline span.icon {
+      font-size: 16px;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 34px rgba(79, 70, 229, 0.45),
+        0 0 0 1px rgba(248, 250, 252, 0.25);
+    }
+
+    .btn-outline:hover {
+      background: #f9fafb;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    .profile-top {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 20%, #fee2e2, transparent 55%),
+                  radial-gradient(circle at 80% 80%, #bfdbfe, transparent 55%),
+                  #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      box-shadow:
+        0 10px 30px rgba(148, 163, 184, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.7);
+    }
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .profile-role {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .profile-bio {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      border-radius: 14px;
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 10px;
+      font-size: 13px;
+      color: #1f2933;
+    }
+
+    .pill-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+      margin-bottom: 3px;
+      display: block;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .profile-bottom {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .profile {
+        gap: 16px;
+      }
+      .profile-bottom {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <header class="header">
+        <div class="brand-block">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span data-i18n="badge_online">Online practice</span>
+          </div>
+          <div class="name">Ainur Bisembaeva</div>
+          <p class="subtitle" data-i18n="subtitle">
+            Psychologist & Gestalt therapist helping adults navigate anxiety, relationships, and life transitions.
+          </p>
+        </div>
+        <div class="lang-toggle" aria-label="Language selection">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="kz">KZ</button>
+        </div>
+      </header>
+
+      <section>
+        <h2 class="hero-title" data-i18n="hero_title">
+          A calm, honest space to talk and feel understood.
+        </h2>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          I work with adults who feel overwhelmed, stuck, or alone with their emotions – and are ready to understand themselves better.
+        </p>
+        <div class="hero-tags">
+          <span class="tag" data-i18n="tag_online">Online sessions</span>
+          <span class="tag" data-i18n="tag_languages">RU · KZ · EN</span>
+          <span class="tag" data-i18n="tag_format">Individual therapy</span>
+        </div>
+        <div class="card">
+          <p data-i18n="who_i_help">
+            People come to me when they feel anxiety, emotional burnout, difficulties in relationships, or when important life changes make everything unstable. Together we gently explore what is happening and what you truly need.
+          </p>
+          <div class="cta-row">
+            <a href="mailto:your-email@example.com" class="btn-primary">
+              <span class="icon">✉️</span>
+              <span data-i18n="cta_book">Book a first session</span>
+            </a>
+            <a href="#how" class="btn-outline">
+              <span class="icon">➜</span>
+              <span data-i18n="cta_how">How sessions work</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="how">
+        <h3 class="section-title" data-i18n="section_how_title">How we work together</h3>
+        <div class="card">
+          <ul class="list">
+            <li data-i18n="how_1">We start with 1‑2 sessions to understand your request and current situation.</li>
+            <li data-i18n="how_2">I ask gentle, honest questions and reflect what I see and feel in our contact.</li>
+            <li data-i18n="how_3">We focus on what is happening with you here and now, not only on your past.</li>
+            <li data-i18n="how_4">You decide the pace. My role is to support, clarify, and be on your side.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="section-title" data-i18n="section_good_for">This can be helpful if</h3>
+        <div class="card">
+          <ul class="list">
+            <li data-i18n="good_1">You feel anxious, tense, or tired all the time.</li>
+            <li data-i18n="good_2">You struggle with boundaries, guilt, or pleasing others.</li>
+            <li data-i18n="good_3">Relationships repeat the same painful pattern.</li>
+            <li data-i18n="good_4">You are going through a breakup, move, or other big change.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <div class="profile">
+        <div class="profile-top">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <div class="profile-name">Ainur Bisembaeva</div>
+            <div class="profile-role" data-i18n="profile_role">
+              Psychologist · Gestalt therapist
+            </div>
+          </div>
+          <p class="profile-bio" data-i18n="profile_bio">
+            I work in a human, respectful way without judgment, labels, or “quick fixes”. We look at your feelings, body reactions, and relationships to understand what is really happening and what could be different.
+          </p>
+
+          <div class="info-grid">
+            <div class="pill">
+              <span class="pill-label" data-i18n="pill_formats_label">Formats</span>
+              <span data-i18n="pill_formats_value">Individual online sessions (video / audio)</span>
+            </div>
+            <div class="pill">
+              <span class="pill-label" data-i18n="pill_session_label">Session length</span>
+              <span data-i18n="pill_session_value">50 minutes · 1 time per week is recommended</span>
+            </div>
+            <div class="pill">
+              <span class="pill-label" data-i18n="pill_price_label">Price</span>
+              <span class="price" data-i18n="pill_price_value">XX 000 ₸ / session</span>
+              <div class="note" data-i18n="pill_price_note">
+                The exact price and payment method we discuss before we start.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-bottom" data-i18n="profile_bottom">
+          This page is for information only and does not replace medical or emergency help. 
+          If you are in crisis, please contact local emergency services in your country.
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        badge_online: "Online practice",
+        subtitle:
+          "Psychologist & Gestalt therapist helping adults navigate anxiety, relationships, and life transitions.",
+        hero_title: "A calm, honest space to talk and feel understood.",
+        hero_subtitle:
+          "I work with adults who feel overwhelmed, stuck, or alone with their emotions – and are ready to understand themselves better.",
+        tag_online: "Online sessions",
+        tag_languages: "RU · KZ · EN",
+        tag_format: "Individual therapy",
+        who_i_help:
+          "People come to me when they feel anxiety, emotional burnout, difficulties in relationships, or when important life changes make everything unstable. Together we gently explore what is happening and what you truly need.",
+        cta_book: "Book a first session",
+        cta_how: "How sessions work",
+        section_how_title: "How we work together",
+        how_1: "We start with 1‑2 sessions to understand your request and current situation.",
+        how_2: "I ask gentle, honest questions and reflect what I see and feel in our contact.",
+        how_3: "We focus on what is happening with you here and now, not only on your past.",
+        how_4: "You decide the pace. My role is to support, clarify, and be on your side.",
+        section_good_for: "This can be helpful if",
+        good_1: "You feel anxious, tense, or tired all the time.",
+        good_2: "You struggle with boundaries, guilt, or pleasing others.",
+        good_3: "Relationships repeat the same painful pattern.",
+        good_4: "You are going through a breakup, move, or other big change.",
+        profile_role: "Psychologist · Gestalt therapist",
+        profile_bio:
+          "I work in a human, respectful way without judgment, labels, or “quick fixes”. We look at your feelings, body reactions, and relationships to understand what is really happening and what could be different.",
+        pill_formats_label: "Formats",
+        pill_formats_value: "Individual online sessions (video / audio)",
+        pill_session_label: "Session length",
+        pill_session_value: "50 minutes · 1 time per week is recommended",
+        pill_price_label: "Price",
+        pill_price_value: "XX 000 ₸ / session",
+        pill_price_note:
+          "The exact price and payment method we discuss before we start.",
+        profile_bottom:
+          "This page is for information only and does not replace medical or emergency help. If you are in crisis, please contact local emergency services in your country."
+      },
+      ru: {
+        badge_online: "Онлайн‑практика",
+        subtitle:
+          "Психолог и гештальт‑терапевт. Помогаю взрослым справляться с тревогой, кризисами и сложными отношениями.",
+        hero_title: "Спокойное, честное пространство, где вас слышат.",
+        hero_subtitle:
+          "Я работаю со взрослыми, которые устали держаться, чувствуют растерянность или одиночество — и хотят лучше понимать себя.",
+        tag_online: "Онлайн‑сессии",
+        tag_languages: "RU · KZ · EN",
+        tag_format: "Индивидуальная терапия",
+        who_i_help:
+          "Ко мне приходят, когда становится слишком тревожно, тяжело в отношениях или когда важные изменения выбивают из колеи. Вместе мы аккуратно разбираем, что с вами происходит и чего вы на самом деле хотите.",
+        cta_book: "Записаться на первую встречу",
+        cta_how: "Как проходят сессии",
+        section_how_title: "Как мы работаем",
+        how_1: "Мы начинаем с 1–2 встреч, чтобы прояснить ваш запрос и текущую ситуацию.",
+        how_2: "Я задаю бережные, честные вопросы и делюсь тем, что замечаю в нашем контакте.",
+        how_3: "Мы смотрим на то, что происходит с вами здесь и сейчас, а не только в прошлом.",
+        how_4: "Вы задаёте темп. Моя задача — поддерживать, прояснять и быть на вашей стороне.",
+        section_good_for: "Полезно, если",
+        good_1: "Вы чувствуете постоянное напряжение, тревогу или усталость.",
+        good_2: "Сложно с границами, чувством вины и «надо быть удобным».",
+        good_3: "Отношения часто развиваются по одному и тому же болезненному сценарию.",
+        good_4: "Вы переживаете расставание, переезд или другие большие изменения.",
+        profile_role: "Психолог · Гештальт‑терапевт",
+        profile_bio:
+          "Я работаю по‑человечески, с уважением, без ярлыков и «быстрых решений». Мы опираемся на ваши чувства, реакции тела и отношения, чтобы понять, что с вами происходит и как можно по‑другому.",
+        pill_formats_label: "Формат",
+        pill_formats_value: "Индивидуальные онлайн‑сессии (видео / аудио)",
+        pill_session_label: "Длительность",
+        pill_session_value: "50 минут · обычно 1 раз в неделю",
+        pill_price_label: "Стоимость",
+        pill_price_value: "XX 000 ₸ за сессию",
+        pill_price_note:
+          "Точную стоимость и способ оплаты мы обсуждаем заранее перед началом работы.",
+        profile_bottom:
+          "Информация на сайте не заменяет медицинскую помощь и экстренные службы. В кризисной ситуации обратитесь в службы неотложной помощи вашей страны."
+      },
+      kz: {
+        badge_online: "Онлайн тәжірибе",
+        subtitle:
+          "Психолог және гештальт‑терапевт. Ересектерге уайым, қарым‑қатынас және өмірлік өзгерістермен жұмыс істеуге көмектесемін.",
+        hero_title: "Сізді тыңдайтын тыныш және шынайы кеңістік.",
+        hero_subtitle:
+          "Өзін‑өзі түсінгісі келетін, шаршаған, шатасқан немесе сезімдерімен жалғыз қалған ересектермен жұмыс істеймін.",
+        tag_online: "Онлайн сессиялар",
+        tag_languages: "RU · KZ · EN",
+        tag_format: "Жеке терапия",
+        who_i_help:
+          "Адамдар маған мазасыздық, күйзеліс, қарым‑қатынастағы қиындықтар немесе өмірдегі үлкен өзгерістер кезінде келеді. Біз бірге не болып жатқанын және сізге шынымен не керек екенін жайлап зерттейміз.",
+        cta_book: "Алғашқы сессияға жазылу",
+        cta_how: "Сессия қалай өтеді",
+        section_how_title: "Біз қалай жұмыс жасаймыз",
+        how_1: "Алдымен сіздің сұранысыңыз бен қазіргі жағдайыңызды түсіну үшін 1–2 кездесу өтеді.",
+        how_2: "Мен жұмсақ, шынайы сұрақтар қойып, біздің қарым‑қатынаста не байқағанымды бөлісемін.",
+        how_3: "Негізгі назар — дәл қазір сізбен не болып жатқанына, тек өткенге емес.",
+        how_4: "Қадамды сіз таңдайсыз. Менің рөлім — қолдау, түсіндіру және сіздің жағыңызда болу.",
+        section_good_for: "Қолайлы, егер",
+        good_1: "Сіз үнемі шаршаған, уайымшыл немесе кернеуде жүрсеңіз.",
+        good_2: "Шекара орнату, «жоқ» деу және кінә сезімі қиын болса.",
+        good_3: "Қарым‑қатынастар бірдей ауыр сценарий бойынша қайталана берсе.",
+        good_4: "Сіз айырылысу, көшу немесе басқа да үлкен өзгерістерді бастан өткерсеңіз.",
+        profile_role: "Психолог · Гештальт‑терапевт",
+        profile_bio:
+          "Мен адамға құрметпен, бағасыз және дайын шешімдерсіз қараймын. Біз сіздің сезімдеріңізге, дене реакцияларыңызға және қарым‑қатынастарға сүйене отырып, не болып жатқанын және оны қалай өзгертуге болатынын зерттейміз.",
+        pill_formats_label: "Формат",
+        pill_formats_value: "Жеке онлайн‑сессиялар (бейне / аудио)",
+        pill_session_label: "Ұзақтығы",
+        pill_session_value: "50 минут · әдетте аптасына 1 рет",
+        pill_price_label: "Бағасы",
+        pill_price_value: "XX 000 ₸ / сессия",
+        pill_price_note:
+          "Нақты баға мен төлем тәсілін жұмысты бастамас бұрын келісеміз.",
+        profile_bottom:
+          "Бұл сайттағы ақпарат медициналық көмекті және жедел қызметтерді алмастырмайды. Қауіпті немесе кризистік жағдайда өз еліңіздегі жедел қызметке жүгініңіз."
+      }
+    };
+
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const i18nElements = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dict = translations[lang];
+      if (!dict) return;
+      i18nElements.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+      langButtons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+
+    setLanguage("en");
+  </script>
+</body>
+</html>
